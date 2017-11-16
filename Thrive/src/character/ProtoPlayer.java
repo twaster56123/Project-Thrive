@@ -114,8 +114,9 @@ public class ProtoPlayer {
 								
 						boolean upperBounds = (  !( (tempX>=Ix+IWidth*0.8) || (tempX+width<=Ix+IWidth*0.1) || (tempY>=Iy+IHeight/1000) || (tempY+tempHeight<=Iy) ) );
 						boolean lowerBounds = (  !( (tempX>=Ix+IWidth*0.8) || (tempX+width<=Ix+IWidth*0.1) || (tempY>=Iy+IHeight) || (tempY+tempHeight/1000<=Iy) ) );
-						boolean leftBounds = (  !( (tempX>=Ix+IWidth/1000) || (tempX+width<=Ix) || (tempY>=Iy+IHeight*0.9) || (y+tempHeight<=Iy+IHeight*0.1) ) );
-						boolean rightBounds = (  !( (tempX>=Ix+IWidth) || (tempX+width/1000<=Ix) || (tempY>=Iy+IHeight*0.9) || (y+tempHeight<=Iy+IHeight*0.1) ) );
+///Revise left+right bounds						
+						boolean leftBounds = (  !( (tempX>=Ix+IWidth/1000) || (tempX+width<=Ix) || (tempY>=Iy+IHeight) || (y+tempHeight<=Iy  ) ) );
+						boolean rightBounds = (  !( (tempX>=Ix+IWidth) || (tempX+width/1000<=Ix) || (tempY>=Iy+IHeight) || (y+tempHeight<=Iy   ) ) );
 	
 			////Priority Rendering
 						if(renderBounds && above){
