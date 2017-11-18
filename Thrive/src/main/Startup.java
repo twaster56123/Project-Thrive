@@ -11,7 +11,8 @@ public class Startup {
 		
 		Map._loadImages();
 		
-		Map._import("ProtoMap");
+	//	Map._import("ProtoMap");
+		Map._import("beb");
 	//	Data.player.loadPlayerImages("res/characters/Stick_Girl/", 2);	res\characters\Sarengeti
 		Data.player.loadPlayerImages("res\\characters\\Sarengeti\\", 1);
 		
