@@ -3,10 +3,10 @@ package aaaMap;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import aaa.Data;
-
 import character.Camera_View;
 
 public class Map extends loader{
@@ -118,14 +118,11 @@ public class Map extends loader{
 		double rx=Data.ratioX;
 		double ry=Data.ratioY;
 		
-		boolean drawn = false;
 		int leeway=100;
 		int screenX=(int)Math.round(cam.x);
 		int screenY=(int)Math.round(cam.y);
 		
-		int holdI=0;
-		int holdW=0;
-		int holdH=0;
+		ArrayList<Integer> temp = new <Integer>ArrayList();
 		
 		//Yikes ... Draws Objects (faster with smaller lists)
 		for(int i=0; i<_objects_name.length; i++){
@@ -133,15 +130,14 @@ public class Map extends loader{
 				
 				if( (_objects[i*2]-screenY)>=(0-leeway) || (_objects[i*2]-screenX)<=(width+leeway) || (_objects[i*2+1]-screenY)>=(0-leeway) || (_objects[i*2+1]-screenY)<=(height+leeway) ){
 					try{
-						if(!objectPriority[i] || drawn){
+						if(!objectPriority[i]){
 							int newWidth = (int)(objectImages[_objects_id[i]].getWidth()*rx);
 							int newHeight = (int)(objectImages[_objects_id[i]].getHeight()*ry);
 							g.drawImage(objectImages[_objects_id[i]], (int)((_objects[i*2]-screenX)*rx),(int)(( _objects[i*2+1]-screenY)*ry), newWidth, newHeight, null);
 						}else{
-							drawn=true;
-							holdI = i;
-							holdW = (int)(objectImages[_objects_id[i]].getWidth()*rx);
-							holdH = (int)(objectImages[_objects_id[i]].getHeight()*ry);
+							temp.add(i);
+							temp.add((int)(objectImages[_objects_id[i]].getWidth()*rx));
+							temp.add((int)(objectImages[_objects_id[i]].getHeight()*ry));
 						}
 					}catch(Exception ex){}
 				}
@@ -152,8 +148,10 @@ public class Map extends loader{
 		
 		
 		Data.player.drawPlayer(g);
-		if(drawn){
-			g.drawImage(objectImages[_objects_id[holdI]], (int)((_objects[holdI*2]-screenX)*rx),(int)(( _objects[holdI*2+1]-screenY)*ry), holdW, holdH, null);
+		if(!temp.isEmpty()){
+			for(int i=0; i<temp.size()/3; i++){
+				g.drawImage(objectImages[_objects_id[(int)temp.get(i*3)]], (int)((_objects[(int)temp.get(i*3)*2]-screenX)*rx),(int)(( _objects[(int)temp.get(i*3)*2+1]-screenY)*ry), (int)temp.get(i*3+1),  (int)temp.get(i*3+2), null);
+			}
 		}
 		
 		

@@ -42,6 +42,11 @@ public class MouseInput implements MouseListener, MouseMotionListener{
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent mouse) {}
+	public void mouseReleased(MouseEvent mouse) {
+		int button = mouse.getButton();
+		if(button>=0 && button<=9){
+			MouseData.mouseDown[button]=false;
+		}
+	}
 
 }

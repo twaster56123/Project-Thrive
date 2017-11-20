@@ -124,7 +124,6 @@ public class ProtoPlayer {
 						}else{
 							Map.objectPriority[i]=false;
 						}
-			
 			////Collision of objects	
 						if( !( Map._objects_name[i].equals("") ) ){
 							if(upperBounds){

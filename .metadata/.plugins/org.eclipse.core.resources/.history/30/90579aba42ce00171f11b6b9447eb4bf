@@ -1,0 +1,20 @@
+
+public class QuickMaffs {
+
+	public static void main(String args[]){
+		
+		int dest = 5;
+		int answer =1;
+		
+		double timeStart = System.nanoTime();
+		for(int i=1; i<=dest; i++){
+			answer+=answer;
+		}
+		double timeEnd = System.nanoTime();
+		double delta= ((timeEnd-timeStart)/1000000000.0);
+		
+		System.out.println(answer+" took "+delta+"seconds");
+		
+	}
+	
+}
