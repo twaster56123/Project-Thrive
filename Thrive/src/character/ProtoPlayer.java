@@ -179,6 +179,23 @@ public class ProtoPlayer {
 		
 	}
 	
+	public void CollisionVoidRendering(){
+		double maxWorldWidth = (double)Map._static.length*33;
+		double maxWorldHeight =(double)Map._static[0].length*33;
+		if(x<0){
+			x=0;
+		}
+		if(y<0){
+			y=0;
+		}
+		if(x>maxWorldWidth){
+			x=maxWorldWidth;
+		}
+		if(y>maxWorldHeight){
+			y=maxWorldHeight;
+		}
+	}
+	
 	public void MagnitudeRange(){
 		Camera_View cam = new Camera_View();
 		for(int i=0; i<Map._objects_name.length; i++){

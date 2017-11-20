@@ -2,6 +2,7 @@ package aScript;
 
 import aaa.Data;
 import aaa.Gui;
+import aaaMap.Map;
 import character.Camera_View;
 
 public class ScriptHandler {
@@ -22,6 +23,7 @@ public class ScriptHandler {
 	private void playerStuff(){
 		Data.player.CollisionBlockRendering();
 		Data.player.CollisionObjectRendering();
+		Data.player.CollisionVoidRendering();
 		Data.player.MagnitudeRange();
 	}
 	
@@ -64,6 +66,20 @@ public class ScriptHandler {
 		if(Data.mode.equals("game")){
 			Camera_View.x = (-Data.windowWidth+75)/2+Data.player.x;
 			Camera_View.y = (-Data.windowHeight+149)/2+Data.player.y;
+			double maxWorldWidth = (double)Map._static.length*33;
+			double maxWorldHeight =(double)Map._static[0].length*33;
+			if(Camera_View.x<0){
+				Camera_View.x=0;
+			}
+			if(Camera_View.y<0){
+				Camera_View.y=0;
+			}
+			if(Camera_View.x>maxWorldWidth){
+				Camera_View.x=maxWorldWidth;
+			}
+			if(Camera_View.y>maxWorldHeight){
+				Camera_View.y=maxWorldHeight;
+			}
 		}
 	}
 	
