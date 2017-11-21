@@ -64,8 +64,8 @@ public class ScriptHandler {
 	
 	private void CAMERA_FOLLOW_PLAYER(){
 		if(Data.mode.equals("game")){
-			Camera_View.x = (-Data.windowWidth+75)/2+Data.player.x;
-			Camera_View.y = (-Data.windowHeight+149)/2+Data.player.y;
+			Camera_View.x = (-Data.windowWidth+Data.player.width)/2+Data.player.x;
+			Camera_View.y = (-Data.windowHeight+Data.player.height)/2+Data.player.y;
 			double maxWorldWidth = (double)Map._static.length*33;
 			double maxWorldHeight =(double)Map._static[0].length*33;
 			if(Camera_View.x<0){

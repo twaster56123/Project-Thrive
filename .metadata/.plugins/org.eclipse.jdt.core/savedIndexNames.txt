@@ -1,5 +1,4 @@
 INDEX VERSION 1.126+C:\Users\Eric\Desktop\Project-Thrive\.metadata\.plugins\org.eclipse.jdt.core
-921248403.index
 2254391110.index
 4037450858.index
 2244606415.index
