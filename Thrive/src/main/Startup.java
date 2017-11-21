@@ -14,8 +14,8 @@ public class Startup {
 		Items.loadItemIcons();
 		Hud.loadImages();
 		
-	//	Map._import("ProtoMap");
-		Map._import("beb");
+		Map._import("ProtoMap");
+	//	Map._import("beb");
 		Data.player.loadPlayerImages("res\\characters\\Sarengeti\\", 1);
 		
 		Screen scr = new Screen();

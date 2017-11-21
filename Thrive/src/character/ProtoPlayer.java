@@ -39,7 +39,7 @@ public class ProtoPlayer {
 	public double y=100;
 	public int width=40;
 	public int height=108;
-	public int range =100;
+	public int range =45;
 	
 	public static ArrayList<BufferedImage> walkAnim =new ArrayList<BufferedImage>();
 	public int anims=0;
@@ -219,7 +219,7 @@ public class ProtoPlayer {
 			double magnitude = Math.sqrt( (Math.pow(newX, 2) + Math.pow(newY, 2)) );
 						
 			if(magnitude<=range){
-							
+//////				System.out.println(magnitude);
 				switch(Map._objects_name[i]){
 							
 					case("portal1"): System.out.println("hi1"); break;
