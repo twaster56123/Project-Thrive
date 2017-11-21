@@ -1,6 +1,5 @@
 package main;
 
-import guiScript.Menu_Play;
 import aaa.Data;
 import aaa.Gui;
 import aaaMap.Map;
@@ -13,7 +12,6 @@ public class Startup {
 		
 	//	Map._import("ProtoMap");
 		Map._import("beb");
-	//	Data.player.loadPlayerImages("res/characters/Stick_Girl/", 2);	res\characters\Sarengeti
 		Data.player.loadPlayerImages("res\\characters\\Sarengeti\\", 1);
 		
 		Screen scr = new Screen();

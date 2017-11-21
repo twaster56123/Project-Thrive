@@ -1,6 +1,7 @@
 package aDrawing;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 
 import character.Camera_View;
@@ -18,7 +19,60 @@ public class DrawHandler {
 		game();
 		settings();
 		credits();
+	
 		
+		tempInventoryIdea();
+		
+	}
+	
+	private void tempInventoryIdea(){
+		if(Data.mode.equals("game")){
+			
+			//Hot bar
+			for(int i=0; i<9; i++){
+				int font = 20;
+				int width=(int)( 40*Data.ratioX );
+				int height=(int)( 40*Data.ratioY );
+				int x=(int)( (i*40+Data.windowWidth/2-(9*40)/2)*Data.ratioX );
+				int y= (int)( 520*Data.ratioY );
+				
+				g.setColor(Color.gray);
+				g.fillRect(x,y,width,height);
+				
+				if( (i)==Data.player.hotKeySelected-1  ){
+					g.setColor(Color.red);
+				}else{
+					g.setColor(Color.yellow);
+				}
+				g.drawRect(x,y,width,height);
+				
+				g.setColor(Color.black);
+				g.setFont(new Font("arial", 1, (int)Math.round(font*(Data.ratioX*Data.ratioY)/2)+font/2));
+				g.drawString( ""+(i+1),x+font/10,(int) ((y+font*(Data.ratioX*Data.ratioY)/2)+font/3)+1 );
+				
+			}
+			
+			if(Data.player.inventoryOpen){
+				
+				for(int i=0; i<4; i++){
+					for(int z=0; z<9; z++){
+						int width=(int)( 40*Data.ratioX );
+						int height=(int)( 40*Data.ratioY );
+						int x=(int)( (z*40+Data.windowWidth/2-(9*40)/2)*Data.ratioX );
+						int y= (int)( (i*40+Data.windowHeight/2-(4*40)/2)*Data.ratioY );
+					
+						g.setColor(Color.gray);
+						g.fillRect(x,y,width,height);
+						
+						g.setColor(Color.yellow);
+						g.drawRect(x,y,width,height);
+					
+					}
+				}
+				
+			}
+			
+		}
 	}
 	
 	private void game(){

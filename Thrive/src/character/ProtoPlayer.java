@@ -28,8 +28,8 @@ public class ProtoPlayer {
 	public double moveSpeed=150;
 	public double x=100;
 	public double y=100;
-	public int width=65;
-	public int height=175;
+	public int width=40;
+	public int height=108;
 	public int range =100;
 	
 	public static ArrayList<BufferedImage> walkAnim =new ArrayList<BufferedImage>();
@@ -37,11 +37,13 @@ public class ProtoPlayer {
 	public double pointer =0;
 	public String animation="walk";
 	
+	public boolean inventoryOpen=false;
+	public int[][][] inventory = new int[9][4][2];
+	public int hotbar[] = new int[9];
+	public int hotKeySelected=1;
 	
-											//Player Physics???
-	//Player Animations???----
 	//Player Collect stuff???
-	//Player Inventory????
+	///////Player Inventory????
 	
 	public void drawPlayer(Graphics g){
 		try{
