@@ -2,6 +2,8 @@ package main;
 
 import aaa.Data;
 import aaa.Gui;
+import aaa.Hud;
+import aaa.Items;
 import aaaMap.Map;
 
 public class Startup {
@@ -9,6 +11,8 @@ public class Startup {
 	public static void main(String args[]){
 		
 		Map._loadImages();
+		Items.loadItemIcons();
+		Hud.loadImages();
 		
 	//	Map._import("ProtoMap");
 		Map._import("beb");

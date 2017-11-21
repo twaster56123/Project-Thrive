@@ -1,0 +1,9 @@
+package aaa;
+
+import java.awt.image.BufferedImage;
+
+public class Hud {
+
+	public BufferedImage[] image = new BufferedImage[3];
+	
+}

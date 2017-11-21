@@ -1,0 +1,29 @@
+package aaa;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+public class Hud {
+
+	public BufferedImage[] image = new BufferedImage[3];
+	
+	public void loadImages(){
+		
+		String ext = ".png";
+		String path="res\\Inventory\\hud\\";
+		
+		String images[] = {"bg","fg1","fg2"};
+		try{
+			for(int i=0; i<images.length; i++){
+				image[i]=ImageIO.read(new File(path+images[i]+ext));
+			}
+		}catch(IOException ex){
+			
+		}
+		
+	}
+	
+}

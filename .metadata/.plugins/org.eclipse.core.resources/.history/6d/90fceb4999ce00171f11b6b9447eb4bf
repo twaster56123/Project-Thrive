@@ -1,0 +1,22 @@
+package aaa;
+
+import java.awt.image.BufferedImage;
+
+public class Items {
+
+	public static String[] name ={null,"axe","pickaxe","hoe"};
+	
+	public static int 
+	nothing=0,
+	axe=1,
+	pickaxe=2,
+	hoe=3
+	;
+	
+	public static BufferedImage[] icon = new BufferedImage[100];
+	
+	public static void loadItemIcons(){
+		String path = "res\\Inventory\\icons\\";
+	}
+	
+}

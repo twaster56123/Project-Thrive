@@ -24,7 +24,6 @@ public class ScriptHandler {
 		Data.player.CollisionBlockRendering();
 		Data.player.CollisionObjectRendering();
 		Data.player.CollisionVoidRendering();
-		Data.player.MagnitudeRange();
 	}
 	
 	private void MENU_GUI(){

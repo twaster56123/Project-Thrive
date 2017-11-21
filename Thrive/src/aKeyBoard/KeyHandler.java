@@ -43,7 +43,7 @@ public class KeyHandler {
 	}
 	
 	private double openInvTick=0;
-	private double openInvRegen=0.1;
+	private double openInvRegen=0.05;
 	private void openInventory(){
 		if(isKeyDown(i)){
 			if(openInvTick<=0){

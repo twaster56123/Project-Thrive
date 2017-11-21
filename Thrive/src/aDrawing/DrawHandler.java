@@ -7,6 +7,8 @@ import java.awt.Graphics;
 import character.Camera_View;
 
 import aaa.Data;
+import aaa.Hud;
+import aaa.Items;
 import aaaMap.Map;
 
 public class DrawHandler {
@@ -36,15 +38,16 @@ public class DrawHandler {
 				int x=(int)( (i*40+Data.windowWidth/2-(9*40)/2)*Data.ratioX );
 				int y= (int)( 520*Data.ratioY );
 				
-				g.setColor(Color.gray);
-				g.fillRect(x,y,width,height);
+				g.drawImage(Hud.image[0],x,y,width,height,null);
+				
+				//icon here
+				g.drawImage(Items.icon[Data.player.hotbar[i]], x, y, width, height, null);
 				
 				if( (i)==Data.player.hotKeySelected-1  ){
-					g.setColor(Color.red);
+					g.drawImage(Hud.image[1],x,y,width,height,null);
 				}else{
-					g.setColor(Color.yellow);
+					g.drawImage(Hud.image[2],x,y,width,height,null);
 				}
-				g.drawRect(x,y,width,height);
 				
 				g.setColor(Color.black);
 				g.setFont(new Font("arial", 1, (int)Math.round(font*(Data.ratioX*Data.ratioY)/2)+font/2));
@@ -61,11 +64,10 @@ public class DrawHandler {
 						int x=(int)( (z*40+Data.windowWidth/2-(9*40)/2)*Data.ratioX );
 						int y= (int)( (i*40+Data.windowHeight/2-(4*40)/2)*Data.ratioY );
 					
-						g.setColor(Color.gray);
-						g.fillRect(x,y,width,height);
-						
-						g.setColor(Color.yellow);
-						g.drawRect(x,y,width,height);
+						g.drawImage(Hud.image[0],x,y,width,height,null);
+						//icon here
+						g.drawImage(Items.icon[Data.player.inventory[z][i][0]], x, y, width, height, null);
+						g.drawImage(Hud.image[1],x,y,width,height,null);
 					
 					}
 				}

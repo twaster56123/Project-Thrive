@@ -1,0 +1,11 @@
+package aaa;
+
+public class Items {
+
+	public static int 
+	nothing=0,
+	axe=1,
+	pickaxe=2,
+	hoe=3
+	;
+}

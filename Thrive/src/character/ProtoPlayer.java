@@ -9,10 +9,19 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 import aaa.Data;
+import aaa.Items;
 import aaaMap.Map;
 
 public class ProtoPlayer {
 
+	
+	public ProtoPlayer(){
+		//Starting Items
+		hotbar[0]=Items.axe;
+		hotbar[1]=Items.pickaxe;
+		hotbar[2]=Items.hoe;
+	}
+	
 	public String username="";
 	
 	public double maxHealth=100;
@@ -43,7 +52,6 @@ public class ProtoPlayer {
 	public int hotKeySelected=1;
 	
 	//Player Collect stuff???
-	///////Player Inventory????
 	
 	public void drawPlayer(Graphics g){
 		try{
@@ -144,7 +152,7 @@ public class ProtoPlayer {
 						
 					}catch(Exception ex){}
 				}
-				
+				MagnitudeRange(i);
 			}
 		}
 	}
@@ -197,49 +205,38 @@ public class ProtoPlayer {
 		}
 	}
 	
-	public void MagnitudeRange(){
+	public void MagnitudeRange(int i){
 		Camera_View cam = new Camera_View();
-		for(int i=0; i<Map._objects_name.length; i++){
-			if(Map._objects_name[i]!=null){
-				
-				int leeway=100;
-				int screenX=(int)Math.round(cam.x);
-				int screenY=(int)Math.round(cam.y);
-				
-				if( (Map._objects[i*2]-screenY)>=(0-leeway) || (Map._objects[i*2]-screenX)<=(Data.windowWidth+leeway) || (Map._objects[i*2+1]-screenY)>=(0-leeway) || (Map._objects[i*2+1]-screenY)<=(Data.windowHeight+leeway) ){
-					try{
-						int Ix = Map._objects[i*2];
-						int Iy = Map._objects[i*2+1];
-						int IWidth = (Map.objectImages[Map._objects_id[i]].getWidth());
-						int IHeight = (Map.objectImages[Map._objects_id[i]].getHeight());
+		try{
+			int Ix = Map._objects[i*2];
+			int Iy = Map._objects[i*2+1];
+			int IWidth = (Map.objectImages[Map._objects_id[i]].getWidth());
+			int IHeight = (Map.objectImages[Map._objects_id[i]].getHeight());
 
-						double newX = (Ix+IWidth/2-x-width/2);
-						double newY = (Iy+IHeight/2-y-height/2);
+			double newX = (Ix+IWidth/2-x-width/2);
+			double newY = (Iy+IHeight/2-y-height/2);
 						
-						double magnitude = Math.sqrt( (Math.pow(newX, 2) + Math.pow(newY, 2)) );
+			double magnitude = Math.sqrt( (Math.pow(newX, 2) + Math.pow(newY, 2)) );
 						
-						if(magnitude<=range){
+			if(magnitude<=range){
 							
-							switch(Map._objects_name[i]){
+				switch(Map._objects_name[i]){
 							
-								case("portal1"): System.out.println("hi1"); break;
-								case("portal2"): System.out.println("hi2"); break;
-								case("tree1"): System.out.println("hi3"); break;
-								case("ore1"): System.out.println("hi4"); break;
-								case("ore2"): System.out.println("hi5"); break;
+					case("portal1"): System.out.println("hi1"); break;
+					case("portal2"): System.out.println("hi2"); break;
+					case("tree1"): System.out.println("hi3"); break;
+					case("ore1"): System.out.println("hi4"); break;
+					case("ore2"): System.out.println("hi5"); break;
 							
-								default: break;
+					default: break;
 							
-							}
-							
-						}
-						
-						
-					}catch(Exception ex){}
 				}
-				
+							
 			}
-		}
+						
+						
+		}catch(Exception ex){}
 	}
+				
 	
 }
