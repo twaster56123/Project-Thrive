@@ -46,6 +46,9 @@ public class ProtoPlayer {
 	public double pointer =0;
 	public String animation="walk";
 	
+	public String action="";
+	public int actionIndex=-1;
+	
 	public boolean inventoryOpen=false;
 	public int[][][] inventory = new int[9][4][2];
 	public int hotbar[] = new int[9];
@@ -219,16 +222,19 @@ public class ProtoPlayer {
 			double magnitude = Math.sqrt( (Math.pow(newX, 2) + Math.pow(newY, 2)) );
 						
 			if(magnitude<=range){
-//////				System.out.println(magnitude);
+//////			System.out.println(magnitude);
+				actionIndex=i;
 				switch(Map._objects_name[i]){
+					
+					case("portal1"): action="reverse";  break;
+					case("portal2"): action="forward:0"; break;
+					case("portal3"): action="forward:1"; break;
+					case("portal4"): action="forward:2"; break;
+					case("tree1"): 	 action="chopTree"; break;
+					case("ore1"):
+					case("ore2"): 	 action="mineOre" ; break;
 							
-					case("portal1"): System.out.println("hi1"); break;
-					case("portal2"): System.out.println("hi2"); break;
-					case("tree1"): System.out.println("hi3"); break;
-					case("ore1"): System.out.println("hi4"); break;
-					case("ore2"): System.out.println("hi5"); break;
-							
-					default: break;
+					default: action=""; actionIndex=-1; break;
 							
 				}
 							

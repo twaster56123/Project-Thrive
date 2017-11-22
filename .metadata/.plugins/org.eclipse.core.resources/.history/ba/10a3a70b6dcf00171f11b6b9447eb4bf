@@ -1,0 +1,42 @@
+package character;
+
+public class PlayerCommands {
+
+	public void command(String input){
+		
+		int type=-1;
+		String[] temp = input.split("forward");
+		if(temp[0].equals("forward")){
+			input=temp[0];
+			type=Integer.parseInt(temp[1]);
+		}
+		
+		switch(input){
+		
+			case("forward"): teleportF(type); break;
+			case("reverse"): teleportR(); break;
+			case("chopDown"): chopTree(); break;
+			case("mineOre"): mineOre(); break;
+				
+			default: break;
+		}
+		
+	}
+	
+	private void teleportF(int type){
+		
+	}
+	
+	private void teleportR(){
+		
+	}
+	
+	private void chopTree(){
+		
+	}
+	
+	private void mineOre(){
+		
+	}
+	
+}

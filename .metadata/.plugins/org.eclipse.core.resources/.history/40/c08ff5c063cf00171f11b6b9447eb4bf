@@ -1,0 +1,9 @@
+package aaaMap;
+
+public class MapNode {
+
+	public Map currentMap;
+	public Map[] next;
+	public Map prev;
+	
+}

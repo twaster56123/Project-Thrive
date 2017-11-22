@@ -1,0 +1,214 @@
+package aaaMap;
+
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import aaa.Data;
+import character.Camera_View;
+
+public class Map extends loader{
+
+	//File Basics
+	public static String path = "res/maps/";
+	public static String ext  = ".PSBMap";
+	public static String key  = "Eric Purvis";
+	
+	//Data Basics
+	public static String name=""; // Files name
+	public static int _static[][];
+	public static int _objects[];
+	public static String _objects_name[];
+	public static int    _objects_id[];
+	public static boolean objectPriority[];
+	
+	//Window
+	private static int width=Data.windowWidth;
+	private static int height=Data.windowHeight;
+	
+//	static reference
+	public static BufferedImage blocks[];
+//Object reference
+	public static BufferedImage objectImages[];
+//Object Display
+	public static BufferedImage objectDisplayImages[];
+//Object Names
+	public static String objectNames[];
+	
+	public static void _import(String loadFile){
+		name=loadFile;
+		File file = new File(path+loadFile+ext);
+		try{
+			Scanner load = new Scanner(file);
+			String input="";
+			
+			//Work if key is found
+			if(load.nextLine().trim().equals(key)){
+				
+				load.nextDouble();
+				load.nextDouble();
+				
+				//Get static blocks data
+				String test=load.nextLine();
+				test=load.nextLine();
+				if(test.equals("static start")){
+					_static= new int[load.nextInt()][load.nextInt()];
+					input=load.nextLine();
+					input=load.nextLine();
+					while(!(input.equals("static end"))){
+						int x=Integer.parseInt(input);
+						int y=load.nextInt();
+						_static[x][y]=load.nextInt();
+						input=load.nextLine().trim();
+						input=load.nextLine().trim();
+					}
+				}
+				
+				//Get objects data
+				if(load.nextLine().equals("objects start")){
+					int length = load.nextInt();
+					_objects_name = new String[length];
+					objectPriority = new boolean[length];
+					_objects = new int[length*2];
+					_objects_id = new int[length];
+					input=load.nextLine().trim();
+					input=load.nextLine().trim();
+					while(!(input.equals("objects end"))){
+						int i=Integer.parseInt(input);
+						input=load.nextLine();
+						_objects_name[i]=input;
+						_objects_id[i]  =load.nextInt();
+						_objects[i*2]=load.nextInt();
+						_objects[i*2+1]=load.nextInt();
+						input= load.nextLine().trim();
+						input= load.nextLine().trim();
+					}
+				}
+				
+			}
+		}catch(Exception ex){
+			System.out.println(ex.getLocalizedMessage());
+		}
+	}
+
+	public static void _drawStatic(Graphics g){
+		
+		Camera_View cam = new Camera_View();
+		double rx=Data.ratioX;
+		double ry=Data.ratioY;
+		
+		for(int y=(int)Math.round(cam.y/33)-1; y<(int)Math.round(height/33+cam.y/33)+1; y++){
+			for(int x=(int)Math.round(cam.x/33)-1; x<(int)Math.round(width/33+cam.x/33)+1; x++){
+				try{
+					int newWidth = (int)Math.round(blocks[_static[x][y]].getWidth()*rx);
+					int newHeight = (int)Math.round(blocks[_static[x][y]].getHeight()*ry);
+					g.drawImage(blocks[_static[x][y]], (int)Math.round((x*33-cam.x)*rx), (int)Math.round((y*33-cam.y)*ry), newWidth+1, newHeight+1, null);
+				}catch(Exception ex){
+				}
+			}
+		}
+		
+	}
+	
+	public static void _drawObjects(Graphics g){
+		
+		Camera_View cam = new Camera_View();
+		double rx=Data.ratioX;
+		double ry=Data.ratioY;
+		
+		int leeway=100;
+		int screenX=(int)Math.round(cam.x);
+		int screenY=(int)Math.round(cam.y);
+		
+		ArrayList<Integer> temp = new <Integer>ArrayList();
+		
+		//Yikes ... Draws Objects (faster with smaller lists)
+		for(int i=0; i<_objects_name.length; i++){
+			if(_objects_name[i]!=null){
+				
+				if( (_objects[i*2]-screenY)>=(0-leeway) || (_objects[i*2]-screenX)<=(width+leeway) || (_objects[i*2+1]-screenY)>=(0-leeway) || (_objects[i*2+1]-screenY)<=(height+leeway) ){
+					try{
+						if(!objectPriority[i]){
+							int newWidth = (int)(objectImages[_objects_id[i]].getWidth()*rx);
+							int newHeight = (int)(objectImages[_objects_id[i]].getHeight()*ry);
+							g.drawImage(objectImages[_objects_id[i]], (int)((_objects[i*2]-screenX)*rx),(int)(( _objects[i*2+1]-screenY)*ry), newWidth, newHeight, null);
+						}else{
+							temp.add(i);
+							temp.add((int)(objectImages[_objects_id[i]].getWidth()*rx));
+							temp.add((int)(objectImages[_objects_id[i]].getHeight()*ry));
+						}
+					}catch(Exception ex){}
+				}
+				
+			}
+			
+		}
+		
+		
+		Data.player.drawPlayer(g);
+		if(!temp.isEmpty()){
+			for(int i=0; i<temp.size()/3; i++){
+				g.drawImage(objectImages[_objects_id[(int)temp.get(i*3)]], (int)((_objects[(int)temp.get(i*3)*2]-screenX)*rx),(int)(( _objects[(int)temp.get(i*3)*2+1]-screenY)*ry), (int)temp.get(i*3+1),  (int)temp.get(i*3+2), null);
+			}
+		}
+		
+		
+	}
+	
+	
+	public static void _loadImages(){
+		try{
+			//Static image loader
+			File folder = new File(path+"/staticImages");
+			File files[] = folder.listFiles();
+			int count=0;
+			for(int i=0; i<files.length; i++){
+				if(files[i].isFile() && files[i].getName().endsWith(".png")){
+					count++;
+				}
+			}
+			blocks=new BufferedImage[count];
+			count=0;
+			for(int i=0; i<files.length; i++){
+				if(files[i].isFile() && files[i].getName().endsWith(".png")){
+					blocks[count]=getImage(path+"/staticImages/"+files[i].getName());
+					count++;
+				}
+			}
+			
+			//Object Loader
+			folder = new File(path+"/objectImages");
+			files = folder.listFiles();
+			count=0;
+			for(int i=0; i<files.length; i++){
+				if(files[i].isFile() && files[i].getName().endsWith(".png")){
+					count++;
+				}
+			}
+			objectImages=new BufferedImage[count];
+			objectDisplayImages=new BufferedImage[count];
+			objectNames=new String[count];
+			count=0;
+			for(int i=0; i<files.length; i++){
+				if(files[i].isFile() && files[i].getName().endsWith(".png")){
+					objectImages[count]=getImage(path+"/objectImages/"+files[i].getName());
+					
+					objectNames[count]=files[i].getName().replace(".png", "");
+					
+					BufferedImage temp = new BufferedImage(50,50,BufferedImage.TYPE_INT_ARGB);
+					Graphics g = temp.createGraphics();
+					g.drawImage(objectImages[count], 0,0, 50,50, null);
+					g.dispose();			
+					objectDisplayImages[count]=temp;
+					count++;
+					
+				}
+			}
+			
+		}catch(Exception ex){}
+	}
+	
+	
+}

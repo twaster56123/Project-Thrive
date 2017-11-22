@@ -5,17 +5,18 @@ import aaa.Gui;
 import aaa.Hud;
 import aaa.Items;
 import aaaMap.Map;
+import aaaMap.MapNode;
 
 public class Startup {
 
 	public static void main(String args[]){
 		
+		MapNode.temp();
+		
 		Map._loadImages();
 		Items.loadItemIcons();
 		Hud.loadImages();
 		
-		Map._import("ProtoMap");
-	//	Map._import("beb");
 		Data.player.loadPlayerImages("res\\characters\\Sarengeti\\", 1);
 		
 		Screen scr = new Screen();

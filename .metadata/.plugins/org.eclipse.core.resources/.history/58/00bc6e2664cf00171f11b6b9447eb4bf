@@ -1,0 +1,21 @@
+package aaaMap;
+
+public class MapNode {
+	
+	Node Header = new Node();
+	Node currentNode=Header;
+	
+
+}
+
+class Node{
+	
+	public Node[] next;
+	public Node prev;
+	public String map;
+	
+	public Node(){
+		
+	}
+	
+}

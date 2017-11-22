@@ -1,0 +1,65 @@
+package aaaMap;
+
+import java.io.File;
+import java.util.Scanner;
+
+public class MapNode {
+	
+	Node Header;
+	Node currentNode;
+	
+	public void temp(){
+
+		recurs("Start", null);
+	
+	}
+	
+	public void recurs(String name, Node prev){
+		
+		try{
+			String startPoint="res\\nodes\\+"+name+".node";
+			File file = new File(startPoint);
+			Scanner in = new Scanner(file);
+			
+			if(in.hasNext()){
+				String mapName = in.nextLine();
+			}
+			
+			
+			while(in.hasNext()){
+				
+			}
+			
+		}catch(Exception ex){
+			
+		}
+		
+	}
+	
+}
+
+class Node{
+	
+	private Node[] next;
+	private Node prev;
+	private String map;
+	
+	public Node(String mapName, Node prevMap, Node[] nextMaps){
+		map=mapName;
+		prev=prevMap;
+		next=nextMaps;
+	}
+	
+	public Node[] getNext(){
+		return(next);
+	}
+	
+	public Node getPrev(){
+		return(prev);
+	}
+	
+	public String getMap(){
+		return(map);
+	}
+	
+}
