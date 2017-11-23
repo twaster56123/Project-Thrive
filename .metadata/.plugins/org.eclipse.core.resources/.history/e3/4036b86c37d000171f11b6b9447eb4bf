@@ -1,0 +1,8 @@
+/**
+ * Eric Purvis, 160550
+ */
+package Java_Program;
+
+public interface Stack<E> {
+
+}

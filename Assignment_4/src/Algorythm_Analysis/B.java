@@ -1,0 +1,12 @@
+/**
+ * Eric Purvis, 160550
+ */
+
+/*
+ Dr. Li has an interesting way of summing up the values in an array A of n integers, where n is a power of two. He creates an array B of 
+ half the size of A and sets
+ 
+ B[i] = A[2i] + A[2i + 1], for i = 0, 1, ..., (n/2) - 1. If B has size 1, then he outputs
+
+ B[0]. Otherwise, he replaces A with B, and repeats the process. What is the running time of his algorithm? 
+*/

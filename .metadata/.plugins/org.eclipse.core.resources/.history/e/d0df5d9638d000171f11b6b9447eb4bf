@@ -1,0 +1,12 @@
+/**
+ * Eric Purvis, 160550
+ */
+package Java_Program;
+
+public class StartUp {
+
+	public static void main(String args[]){
+		
+	}
+	
+}

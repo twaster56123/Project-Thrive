@@ -1,0 +1,28 @@
+/**
+ * Eric Purvis, 160550
+ */
+package Java_Program;
+
+public class StartUp {
+
+	public static void main(String args[]){
+		
+		String entry[] = {"1", "2", "3"};
+		
+		Array test = new Array(entry);
+	
+		test.push("4");
+		test.push("5");
+		test.push("6");
+		test.push("7");
+		//out(""+test.pop());
+		
+		out(test.toString());
+		
+	}
+	
+	private static void out(String msg){
+		System.out.println(msg);
+	}
+	
+}

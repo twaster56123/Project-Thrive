@@ -1,0 +1,69 @@
+package Algorythm_Analysis;
+
+
+public class Main_Algorythm_Analysis {
+
+	public static void main(String args[]){
+		
+	}
+	
+}
+
+class temp<E> implements Vector{
+
+	private int size;
+	private E[] table;
+	
+	public temp(){
+		table =(E[])new Object[1];
+		size=-1;
+	}
+	
+	@Override
+	public int size() {
+		return(size+1);
+	}
+
+	@Override
+	public boolean isEmpty() {
+		if(size<0){
+			return(true);
+		}
+		return(false);
+	}
+
+	@Override
+	public void add(int i, Object e) throws IndexOutOfBoundsException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public E get(int i) throws IndexOutOfBoundsException {
+		E got = null;
+		if(i<0 || i>size){
+			got = table[i];
+		}
+		return(got);
+	}
+
+	@Override
+	public E remove(int i) throws IndexOutOfBoundsException {
+		E removed = null;
+		if(i<0 || i>size){
+			removed = table[i--];
+		}
+		return(removed);
+	}
+
+	@Override
+	public E set(int i, Object e) throws IndexOutOfBoundsException {
+		E replaced = null;
+		if(i<0 || i>size){
+			replaced = table[i];
+			table[i]=(E)e;
+		}
+		return(replaced);
+	}
+	
+}
