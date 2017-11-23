@@ -9,7 +9,7 @@ public class Span2 {
 	
 	public Span2(){
 	
-		int pricesToGen = 1000;//Array size to be
+		int pricesToGen = 100;//Array size to be
 		
 		int priceRangeLow=1; //Dollars
 		int priceRangeHigh=1000;//Dollars
@@ -54,7 +54,7 @@ public class Span2 {
 			if(i!=0){
 				temp+=", ";
 			}
-			temp+=span[i];
+			temp+=span[i];//+".000";
 		}
 		return(temp+"]");
 	}

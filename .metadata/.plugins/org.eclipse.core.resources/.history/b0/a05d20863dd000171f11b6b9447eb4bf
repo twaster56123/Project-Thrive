@@ -9,7 +9,7 @@ public class Span2 {
 	
 	public Span2(){
 	
-		int pricesToGen = 1000;//Array size to be
+		int pricesToGen = 10;//Array size to be
 		
 		int priceRangeLow=1; //Dollars
 		int priceRangeHigh=1000;//Dollars
@@ -23,7 +23,7 @@ public class Span2 {
 		
 		calcSpan(pricesToGen, prices);
 		
-		System.out.println("Span:   "+toString());
+		System.out.println("Span: "+toString());
 		System.out.println("Prices: "+prices.toString());
 		
 		
@@ -33,17 +33,16 @@ public class Span2 {
 	public void calcSpan(int size, Array list){
 		span = new int[size];
 		
+		int tracker =1;
 		span[0]=1;
-		for(int y=1; y<span.length; y++){
-			int tracker =1;
-			for(int x=y-1; x>=0; x--){
-				if((double)list.get(y)>(double)list.get(x) ){
-					tracker++;
-				}else{
-					break;
-				}
+		for(int i=1; i<span.length-1; i++){
+			if(span[i]>span[i+1]){
+				span[i]=1;
+				tracker++;
+			}else{
+				span[i]=tracker;
+				tracker=1;
 			}
-			span[y]=tracker;
 		}
 		
 	}
