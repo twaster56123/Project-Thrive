@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Nov_29th.StartUp&apos; to &apos;SinglyLinkedList&apos;&#x0D;&#x0A;- Original project: &apos;School&apos;&#x0D;&#x0A;- Original element: &apos;Nov_29th.StartUp&apos;&#x0D;&#x0A;- Renamed element: &apos;Nov_29th.SinglyLinkedList&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;StartUp&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Nov_29th{StartUp.java[StartUp" matchStrategy="1" name="SinglyLinkedList" qualified="false" references="true" similarDeclarations="false" stamp="1511847489579" textual="false" version="1.0"/>
+</session>
