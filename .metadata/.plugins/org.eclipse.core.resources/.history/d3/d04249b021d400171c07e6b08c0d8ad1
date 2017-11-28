@@ -12,37 +12,19 @@ public class MapNode {
 	
 	public static void forwardMap(int i){
 		if(currentNode.getNext()[i]!=null){
-			
-			currentNode.x=Data.player.x;
-			currentNode.y=Data.player.y;
-			
-			currentNode.objectNotInUse=Map.objectNotInUse;
-			currentNode.objectRegenTime=Map.objectRegenTime;
-			
 			currentNode=currentNode.getNext()[i];
 			Map._import(currentNode.getMap());
-
-			Data.player.x=currentNode.x;
-			Data.player.y=currentNode.y;
-			
+			Data.player.x=100;
+			Data.player.y=100;
 		}
 	}
 	
 	public static void reverseMap(){
 		if(currentNode.getPrev()!=null){
-			
-			currentNode.objectNotInUse=Map.objectNotInUse;
-			currentNode.objectRegenTime=Map.objectRegenTime;
-			
 			currentNode=currentNode.getPrev();
 			Map._import(currentNode.getMap());
-
-			Data.player.x=currentNode.x;
-			Data.player.y=currentNode.y;
-			
-			Map.objectNotInUse=currentNode.objectNotInUse;
-			Map.objectRegenTime=currentNode.objectRegenTime;
-			
+			Data.player.x=100;
+			Data.player.y=100;
 		}
 	}
 	
@@ -95,12 +77,6 @@ class Node{
 	private Node[] next;
 	private Node prev;
 	private String map;
-	//Map Memory
-	public boolean objectNotInUse[];
-	public double objectRegenTime[];
-	//Player Memory
-	public double x=100;
-	public double y=100;
 	
 	public Node(String mapName, Node prevMap){
 		map=mapName;

@@ -30,10 +30,6 @@ public class MapNode {
 	
 	public static void reverseMap(){
 		if(currentNode.getPrev()!=null){
-			
-			currentNode.objectNotInUse=Map.objectNotInUse;
-			currentNode.objectRegenTime=Map.objectRegenTime;
-			
 			currentNode=currentNode.getPrev();
 			Map._import(currentNode.getMap());
 

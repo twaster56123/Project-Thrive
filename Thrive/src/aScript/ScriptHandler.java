@@ -16,10 +16,26 @@ public class ScriptHandler {
 		BACKTOMENU_basic();
 		
 		playerStuff();
-//		regenStuff();
-//TODO Fix issue with map swapping
-		
+		regenStuff();
+
 		change=false;
+	}
+	
+	double previousCheck=0;
+	private void regenStuff(){
+		//Ticks Every 30 seconds
+		if( (System.nanoTime()-previousCheck)/1000000000.0 >=30){
+			for(int i=0; i<Map.objectRegenTime.length; i++){
+				if(Map.objectNotInUse[i]){
+					//Everything is on a 2 min timer for now, specifics can be done
+					if(( (System.nanoTime()-Map.objectRegenTime[i])/1000000000.0 ) >= 120.0 ){
+						Map.objectNotInUse[i]=!Map.objectNotInUse[i];
+					}
+				}
+			}
+			previousCheck = System.nanoTime();
+		}
+		
 	}
 	
 	private void playerStuff(){
