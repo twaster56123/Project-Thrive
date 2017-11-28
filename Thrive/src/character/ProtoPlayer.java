@@ -226,13 +226,14 @@ public class ProtoPlayer {
 				actionIndex=i;
 				switch(Map._objects_name[i]){
 					
-					case("portal1"): action="reverse";  break;
-					case("portal2"): action="forward:0"; break;
-					case("portal3"): action="forward:1"; break;
-					case("portal4"): action="forward:2"; break;
-					case("tree1"): 	 action="chopTree"; break;
-					case("ore1"):
-					case("ore2"): 	 action="mineOre" ; break;
+					case("Portal1"): action="reverse";  break;
+					case("Portal2"): action="forward:0"; break;
+					case("Portal3"): action="forward:1"; break;
+					case("Portal4"): action="forward:2"; break;
+					case("CottonWood_Tree"):
+					case("Oak_Tree"): 	 action="chopTree"; break;
+					case("Copper_Ore"):
+					case("Tin_Ore"): 	 action="mineOre" ; break;
 							
 					default: action=""; actionIndex=-1; break;
 							

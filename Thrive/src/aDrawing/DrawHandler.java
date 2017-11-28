@@ -30,13 +30,14 @@ public class DrawHandler {
 	private void tempInventoryIdea(){
 		if(Data.mode.equals("game")){
 			
+			int font = 20;
+			int width=(int)( Math.round (40*Data.ratioX) );
+			int height=(int)( Math.round (40*Data.ratioY) );
+			
 			//Hot bar
 			for(int i=0; i<9; i++){
-				int font = 20;
-				int width=(int)( 40*Data.ratioX );
-				int height=(int)( 40*Data.ratioY );
-				int x=(int)( (i*40+Data.windowWidth/2-(9*40)/2)*Data.ratioX );
-				int y= (int)( 520*Data.ratioY );
+				int x=(int)( (Math.floor( (double)i*40+Data.windowWidth/2-(9*40)/2)*Data.ratioX ));
+				int y= (int)(Math.floor( 520*Data.ratioY ));
 				
 				g.drawImage(Hud.image[0],x,y,width,height,null);
 				
@@ -59,10 +60,8 @@ public class DrawHandler {
 				
 				for(int i=0; i<4; i++){
 					for(int z=0; z<9; z++){
-						int width=(int)( 40*Data.ratioX );
-						int height=(int)( 40*Data.ratioY );
-						int x=(int)( (z*40+Data.windowWidth/2-(9*40)/2)*Data.ratioX );
-						int y= (int)( (i*40+Data.windowHeight/2-(4*40)/2)*Data.ratioY );
+						int x=(int)( Math.floor( ((double)z*40+Data.windowWidth/2-(9*40)/2)*Data.ratioX) );
+						int y= (int)( Math.floor( ((double)i*40+Data.windowHeight/2-(4*40)/2)*Data.ratioY) );
 					
 						g.drawImage(Hud.image[0],x,y,width,height,null);
 						//icon here
