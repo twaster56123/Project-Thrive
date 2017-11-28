@@ -225,12 +225,12 @@ public class ProtoPlayer {
 //////			System.out.println(magnitude);
 				actionIndex=i;
 				switch(Map._objects_name[i]){
-					
+//TODO add Useable Objects here					
 					case("Portal1"): action="reverse";  break;
 					case("Portal2"): action="forward:0"; break;
 					case("Portal3"): action="forward:1"; break;
 					case("Portal4"): action="forward:2"; break;
-					case("CottonWood_Tree"):
+					case("Cottonwood_Tree"):
 					case("Oak_Tree"): 	 action="chopTree"; break;
 					case("Copper_Ore"):
 					case("Tin_Ore"): 	 action="mineOre" ; break;

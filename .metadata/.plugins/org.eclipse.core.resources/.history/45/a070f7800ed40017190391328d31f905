@@ -23,8 +23,6 @@ public class MapNode {
 		if(currentNode.getPrev()!=null){
 			currentNode=currentNode.getPrev();
 			Map._import(currentNode.getMap());
-			Data.player.x=100;
-			Data.player.y=100;
 		}
 	}
 	

@@ -30,7 +30,7 @@ public class PlayerCommands {
 	}
 	
 	private void teleportR(){
-		MapNode.reverseMap();
+		System.out.println("teleportR");
 	}
 	
 	private void chopTree(){

@@ -1,7 +1,5 @@
 package character;
 
-import aaaMap.MapNode;
-
 public class PlayerCommands {
 
 	public void command(String input){
@@ -26,11 +24,11 @@ public class PlayerCommands {
 	}
 	
 	private void teleportF(int type){
-		MapNode.forwardMap(type);
+		System.out.println("teleportF "+type);
 	}
 	
 	private void teleportR(){
-		MapNode.reverseMap();
+		System.out.println("teleportR");
 	}
 	
 	private void chopTree(){

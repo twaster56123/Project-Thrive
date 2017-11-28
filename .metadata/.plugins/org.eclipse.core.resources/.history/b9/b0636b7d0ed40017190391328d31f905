@@ -3,8 +3,6 @@ package aaaMap;
 import java.io.File;
 import java.util.Scanner;
 
-import aaa.Data;
-
 public class MapNode {
 	
 	private static Node Header;
@@ -14,8 +12,6 @@ public class MapNode {
 		if(currentNode.getNext()[i]!=null){
 			currentNode=currentNode.getNext()[i];
 			Map._import(currentNode.getMap());
-			Data.player.x=100;
-			Data.player.y=100;
 		}
 	}
 	
@@ -23,8 +19,6 @@ public class MapNode {
 		if(currentNode.getPrev()!=null){
 			currentNode=currentNode.getPrev();
 			Map._import(currentNode.getMap());
-			Data.player.x=100;
-			Data.player.y=100;
 		}
 	}
 	
