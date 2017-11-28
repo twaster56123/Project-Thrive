@@ -121,7 +121,7 @@ public class SinglyLinkedList<E> {
 			Node node = start;
 			for(int i=0; i<size(); i++){
 				if(i!=size() && i!=0){
-					msg+=", ";
+					msg+=",";
 				}
 				msg+=node.getElement();
 				node=node.getNext();
@@ -134,20 +134,13 @@ public class SinglyLinkedList<E> {
 			for (int i = 0; i <= 11; i++) {
 			//	SLL.add(i);
 				SLL.insertAt(0, i);
-			}
-			System.out.println("The Size of List is:  " + SLL.size());
-			System.out.println(SLL.toString()+"\n");
-			
-			SLL.insertAt(3, 908);
-			
-			for (int i = 0; i <= 11; i++) {
 				if(i%2==0){
 					SLL.removeAtLast();
 				}
 			}
 			System.out.println("The Size of List is:  " + SLL.size());
-			System.out.println(SLL.toString());
 			
+			System.out.println(SLL.toString());
 			
 		}
 

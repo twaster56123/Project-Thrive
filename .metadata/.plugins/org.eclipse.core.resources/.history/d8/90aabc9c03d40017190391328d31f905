@@ -116,39 +116,27 @@ public class SinglyLinkedList<E> {
 
 		public int size(){   return size;  }
 
-		public String toString(){
-			String msg="{";
-			Node node = start;
-			for(int i=0; i<size(); i++){
-				if(i!=size() && i!=0){
-					msg+=", ";
-				}
-				msg+=node.getElement();
-				node=node.getNext();
-			}
-			return(msg+"}");
-		}
-		
 		public static void main(String[] args) {
 			SinglyLinkedList<Integer> SLL = new SinglyLinkedList<Integer>();
 			for (int i = 0; i <= 11; i++) {
 			//	SLL.add(i);
 				SLL.insertAt(0, i);
-			}
-			System.out.println("The Size of List is:  " + SLL.size());
-			System.out.println(SLL.toString()+"\n");
-			
-			SLL.insertAt(3, 908);
-			
-			for (int i = 0; i <= 11; i++) {
 				if(i%2==0){
 					SLL.removeAtLast();
 				}
 			}
 			System.out.println("The Size of List is:  " + SLL.size());
-			System.out.println(SLL.toString());
-			
-			
+			Node node = SLL.start;
+			String msg="{";
+			for(int i=0; i<SLL.size(); i++){
+				if(i!=SLL.size || i==0){
+					msg+=",";
+				}
+				msg+=node.getElement();
+				node=node.getNext();
+			}
+			msg+="}";
+			System.out.println(msg);
 		}
 
 

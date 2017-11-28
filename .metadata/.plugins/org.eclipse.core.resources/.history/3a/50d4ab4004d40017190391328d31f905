@@ -121,7 +121,7 @@ public class SinglyLinkedList<E> {
 			Node node = start;
 			for(int i=0; i<size(); i++){
 				if(i!=size() && i!=0){
-					msg+=", ";
+					msg+=",";
 				}
 				msg+=node.getElement();
 				node=node.getNext();
