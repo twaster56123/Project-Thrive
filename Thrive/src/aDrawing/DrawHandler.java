@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 
 import character.Camera_View;
+import character.MainHud;
 
 import aaa.Data;
 import aaa.Hud;
@@ -24,7 +25,12 @@ public class DrawHandler {
 	
 		
 		tempInventoryIdea();
+		mainHud();
 		
+	}
+	
+	private void mainHud(){
+		MainHud.draw(g);
 	}
 	
 	private void tempInventoryIdea(){

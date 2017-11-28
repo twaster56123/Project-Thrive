@@ -1,0 +1,27 @@
+package character;
+
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
+public class MainHud {
+
+	private static BufferedImage image = new BufferedImage[6];
+	
+	public static void loadImages(){
+		try{
+			String path = "res\\mainHud\\basicStats\\";
+			String ext = ".png";
+			
+			image[0]= ImageIO.read(new File(path+"HealthBarTotal"+ext));
+		}catch(Exception ex){
+			
+		}
+	}
+	
+	public static void draw(Graphics g){
+		
+	}
+}

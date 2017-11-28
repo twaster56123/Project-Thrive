@@ -1,5 +1,6 @@
 package main;
 
+import character.MainHud;
 import aaa.Data;
 import aaa.Gui;
 import aaa.Hud;
@@ -16,6 +17,7 @@ public class Startup {
 		Map._loadImages();
 		Items.loadItemIcons();
 		Hud.loadImages();
+		MainHud.loadImages();
 		
 		Data.player.loadPlayerImages("res\\characters\\Sarengeti\\", 2);
 		
