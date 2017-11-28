@@ -17,7 +17,7 @@ public class Startup {
 		Items.loadItemIcons();
 		Hud.loadImages();
 		
-		Data.player.loadPlayerImages("res\\characters\\Sarengeti\\", 1);
+		Data.player.loadPlayerImages("res\\characters\\Sarengeti\\", 2);
 		
 		Screen scr = new Screen();
 		Window win = new Window(scr);
