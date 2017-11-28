@@ -86,41 +86,62 @@ public class KeyHandler {
 		anims--;
 		
 		if(Data.player.canMove){
-			if(isKeyDown(a)){
-				Data.player.x-=Data.delta*Data.player.moveSpeed;
-				if(Data.player.pointer>=aa+anims || Data.player.pointer<aa){
-					Data.player.pointer=aa;
-				}
-				else{
-					Data.player.pointer+=Data.delta;
-				}
-			}
-			if(isKeyDown(d)){
-				Data.player.x+=Data.delta*Data.player.moveSpeed;
-				if(Data.player.pointer>=dd+anims || Data.player.pointer<dd){
-					Data.player.pointer=dd;
-				}else{
-					Data.player.pointer+=Data.delta;
-				}
-			}
+			
+			boolean animTaken=false;
+			
 			if(isKeyDown(w)){
 				Data.player.y-=Data.delta*Data.player.moveSpeed;
-				if(Data.player.pointer>=ww+anims || Data.player.pointer<ww){
-					Data.player.pointer=ww;
-				}
-				else{
-					Data.player.pointer+=Data.delta;
+				
+				if(!animTaken){
+					if(Data.player.pointer>=ww+anims || Data.player.pointer<ww){
+						Data.player.pointer=ww;
+					}
+					else{
+						Data.player.pointer+=Data.delta;
+					}
+					animTaken=true;
 				}
 			}
 			if(isKeyDown(s)){
 				Data.player.y+=Data.delta*Data.player.moveSpeed;
-				if(Data.player.pointer>=ss+anims || Data.player.pointer<ss){
-					Data.player.pointer=ss;
-				}
-				else{
-					Data.player.pointer+=Data.delta;
+				
+				if(!animTaken){
+					if(Data.player.pointer>=ss+anims || Data.player.pointer<ss){
+						Data.player.pointer=ss;
+					}
+					else{
+						Data.player.pointer+=Data.delta;
+					}
+					animTaken=true;
 				}
 			}
+			
+			if(isKeyDown(a)){
+				Data.player.x-=Data.delta*Data.player.moveSpeed;
+				
+				if(!animTaken){
+					if(Data.player.pointer>=aa+anims || Data.player.pointer<aa){
+						Data.player.pointer=aa;
+					}
+					else{
+						Data.player.pointer+=Data.delta;
+					}
+					animTaken=true;
+				}
+			}
+			if(isKeyDown(d)){
+				Data.player.x+=Data.delta*Data.player.moveSpeed;
+				
+				if(!animTaken){
+					if(Data.player.pointer>=dd+anims || Data.player.pointer<dd){
+						Data.player.pointer=dd;
+					}else{
+						Data.player.pointer+=Data.delta;
+					}
+					animTaken=true;
+				}
+			}
+
 		}
 		
 		if( ! ( isKeyDown(d) || isKeyDown(w) || isKeyDown(a) || isKeyDown(s) ) ){

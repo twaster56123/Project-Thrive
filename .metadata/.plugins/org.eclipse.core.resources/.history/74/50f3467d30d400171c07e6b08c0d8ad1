@@ -1,6 +1,7 @@
 package aKeyBoard;
 
 import aaa.Data;
+import character.PlayerCommands;
 
 public class KeyHandler {
 
@@ -11,6 +12,7 @@ public class KeyHandler {
 			movement();
 			openInventory();
 			hotKeySelected();
+			playerAction();
 			
 		}
 		
@@ -34,6 +36,24 @@ public class KeyHandler {
 	public static int a=65, s=83, d=68, f=70, g=71, h=72, j=74, k=75, l=76;
 	public static int z=90, x=88, c=67, v=86, b=66, n=78, m=77; 	
 	
+	
+	private double actionTick=0;
+	private double actionRegen=0.25;
+	private PlayerCommands pc = new PlayerCommands();
+	private void playerAction(){
+		
+		if(isKeyDown(f)){
+			if(actionTick<=0){
+				pc.command(Data.player.action);
+				actionTick=actionRegen;
+			}
+		}
+		if(actionTick>0){
+				actionTick-=Data.delta;
+		}
+		
+	}
+	
 	private void hotKeySelected(){
 		for(int i=1; i<=9; i++){
 			if(isKeyDown(one+(i-1))){
@@ -43,17 +63,16 @@ public class KeyHandler {
 	}
 	
 	private double openInvTick=0;
-	private double openInvRegen=0.05;
+	private double openInvRegen=0.25;
 	private void openInventory(){
 		if(isKeyDown(i)){
 			if(openInvTick<=0){
 				Data.player.inventoryOpen=!Data.player.inventoryOpen;
 				openInvTick=openInvRegen;
-			}else{
-				if(openInvTick>0){
-					openInvTick-=Data.delta;
-				}
 			}
+		}
+		if(openInvTick>0){
+				openInvTick-=Data.delta;
 		}
 	}
 	
