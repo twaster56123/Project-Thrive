@@ -16,6 +16,8 @@ public class ScriptHandler {
 		BACKTOMENU_basic();
 		
 		playerStuff();
+//		regenStuff();
+//TODO Fix issue with map swapping
 		
 		change=false;
 	}

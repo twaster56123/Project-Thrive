@@ -19,8 +19,7 @@ public class ProtoPlayer {
 		//Starting Items
 		hotbar[0]=Items.axe;
 		hotbar[1]=Items.pickaxe;
-		hotbar[2]=Items.hoe;
-		inventory[0][1][0]=Items.bronze;
+//		hotbar[2]=Items.hoe;
 	}
 	
 	public String username="";
@@ -104,7 +103,7 @@ public class ProtoPlayer {
 		Camera_View cam = new Camera_View();
 		 action=""; actionIndex=-1;
 		for(int i=0; i<Map._objects_name.length; i++){
-			if(Map._objects_name[i]!=null){
+			if(Map._objects_name[i]!=null && !Map.objectNotInUse[i]){
 				
 				int leeway=100;
 				int screenX=(int)Math.round(cam.x);

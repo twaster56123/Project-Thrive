@@ -131,7 +131,7 @@ public class Map extends loader{
 		
 		//Yikes ... Draws Objects (faster with smaller lists)
 		for(int i=0; i<_objects_name.length; i++){
-			if(_objects_name[i]!=null && !objectNotInUse[i]){
+			if(_objects_name[i]!=null || objectNotInUse[i]){
 				
 				if( (_objects[i*2]-screenY)>=(0-leeway) || (_objects[i*2]-screenX)<=(width+leeway) || (_objects[i*2+1]-screenY)>=(0-leeway) || (_objects[i*2+1]-screenY)<=(height+leeway) ){
 					try{

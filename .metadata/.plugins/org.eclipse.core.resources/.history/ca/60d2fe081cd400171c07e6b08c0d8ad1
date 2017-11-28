@@ -24,7 +24,7 @@ public class Map extends loader{
 	public static int    _objects_id[];
 	public static boolean objectPriority[];
 	
-	public static boolean objectNotInUse[];
+	public static boolean objectInUse[];
 	public static double objectRegenTime[];
 	
 	//Window
@@ -74,7 +74,7 @@ public class Map extends loader{
 					int length = load.nextInt();
 					_objects_name = new String[length];
 					objectPriority = new boolean[length];
-					objectNotInUse = new boolean[length];
+					objectInUse = new boolean[length];
 					objectRegenTime = new double[length];
 					_objects = new int[length*2];
 					_objects_id = new int[length];
@@ -131,7 +131,7 @@ public class Map extends loader{
 		
 		//Yikes ... Draws Objects (faster with smaller lists)
 		for(int i=0; i<_objects_name.length; i++){
-			if(_objects_name[i]!=null && !objectNotInUse[i]){
+			if(_objects_name[i]!=null){
 				
 				if( (_objects[i*2]-screenY)>=(0-leeway) || (_objects[i*2]-screenX)<=(width+leeway) || (_objects[i*2+1]-screenY)>=(0-leeway) || (_objects[i*2+1]-screenY)<=(height+leeway) ){
 					try{

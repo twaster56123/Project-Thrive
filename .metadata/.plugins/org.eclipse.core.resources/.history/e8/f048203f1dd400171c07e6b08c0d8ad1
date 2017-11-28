@@ -71,7 +71,7 @@ public class PlayerCommands {
 		
 		if(Data.player.hotbar[Data.player.hotKeySelected-1]==Items.pickaxe){
 			for(int y=0; y<Data.player.inventory[0].length; y++){
-				for(int x=0; x<Data.player.inventory.length; x++){
+				for(int x=0; y<Data.player.inventory.length; x++){
 	
 					if(Data.player.inventory[x][y][0]==Items.nothing){ 
 						
