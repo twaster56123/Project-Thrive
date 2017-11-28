@@ -59,7 +59,7 @@ public class SinglyLinkedList<E> {
 				insertAtLast(data); 
 			}else{
 				
-				Node<E> newNode = new Node<E>();
+				Node<E> newNode = new Node();
 				newNode.setElement(data);
 				
 				Node<E> PriorNode = getNodeAt(position-1);
@@ -122,7 +122,7 @@ public class SinglyLinkedList<E> {
 
 		public String toString(){
 			String msg="{";
-			Node<E> node = start;
+			Node node = start;
 			for(int i=0; i<size(); i++){
 				if(i!=size() && i!=0){
 					msg+=", ";

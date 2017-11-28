@@ -59,7 +59,7 @@ public class SinglyLinkedList<E> {
 				insertAtLast(data); 
 			}else{
 				
-				Node<E> newNode = new Node<E>();
+				Node<E> newNode = new Node();
 				newNode.setElement(data);
 				
 				Node<E> PriorNode = getNodeAt(position-1);
