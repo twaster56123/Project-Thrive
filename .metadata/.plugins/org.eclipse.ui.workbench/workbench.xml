@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="25" version="2.0">
 <workbenchAdvisor/>
-<window height="728" maximized="true" width="1024" x="0" y="0">
+<window height="728" maximized="true" width="680" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="162"/>
@@ -136,26 +136,31 @@
 <fastViewBars/>
 <layout>
 <mainWindow>
-<info folder="true" part="left">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@39ea8815">
 <folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@cd16451" ratio="0.7096774" ratioLeft="440" ratioRight="180" relationship="4" relative="org.eclipse.ui.internal.ViewStack@39ea8815">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="left" ratio="0.18087472" ratioLeft="244" ratioRight="1105" relationship="2" relative="org.eclipse.ui.internal.ViewStack@39ea8815">
+<folder appearance="2" expanded="0">
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
 <page content="org.eclipse.wb.core.StructureView" label="LabelNotFound"/>
 <page content="org.eclipse.wb.core.PaletteView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
-</folder>
-</info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@9d64a0" ratio="0.74958813" ratioLeft="455" ratioRight="152" relationship="4" relative="left">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1bb8c21a" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="left">
@@ -204,6 +209,10 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@39ea8815"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -212,54 +221,55 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@cd16451"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Stack.java" tooltip="Assignment_4/src/Java_Program/Stack.java">
+<persistable path="/Assignment_4/src/Java_Program/Stack.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Vector.java" tooltip="Assignment_4/src/Java_Program/Vector.java">
+<persistable path="/Assignment_4/src/Java_Program/Vector.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StartUp.java" tooltip="Assignment_4/src/Java_Program/StartUp.java">
+<persistable path="/Assignment_4/src/Java_Program/StartUp.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Array.java" tooltip="Assignment_4/src/Java_Program/Array.java">
+<persistable path="/Assignment_4/src/Java_Program/Array.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main_Algorythm_Analysis.java" tooltip="Assignment_4/src/Algorythm_Analysis/Main_Algorythm_Analysis.java">
+<persistable path="/Assignment_4/src/Algorythm_Analysis/Main_Algorythm_Analysis.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Span2.java" tooltip="Assignment_4/src/Java_Program/Span2.java">
+<persistable path="/Assignment_4/src/Java_Program/Span2.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="B.java" tooltip="Assignment_4/src/Algorythm_Analysis/B.java">
+<persistable path="/Assignment_4/src/Algorythm_Analysis/B.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Vector.java" tooltip="Assignment_4/src/Vector.java">
+<persistable path="/Assignment_4/src/Vector.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PlayerCommands.java" tooltip="Thrive/src/character/PlayerCommands.java">
+<persistable path="/Thrive/src/character/PlayerCommands.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Map.java" tooltip="Thrive/src/aaaMap/Map.java">
 <persistable path="/Thrive/src/aaaMap/Map.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Startup.java" tooltip="Thrive/src/main/Startup.java">
-<persistable path="/Thrive/src/main/Startup.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapNode.java" tooltip="Thrive/src/aaaMap/MapNode.java">
+<persistable path="/Thrive/src/aaaMap/MapNode.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="ProtoMap.PSBMap" tooltip="Thrive/res/maps/ProtoMap.PSBMap">
-<persistable path="/Thrive/res/maps/ProtoMap.PSBMap"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Hud.java" tooltip="Thrive/src/aaa/Hud.java">
+<persistable path="/Thrive/src/aaa/Hud.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Menu_Settings.java" tooltip="Thrive/src/guiScript/Menu_Settings.java">
-<persistable path="/Thrive/src/guiScript/Menu_Settings.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="loader.java" tooltip="Thrive/src/aaaMap/loader.java">
+<persistable path="/Thrive/src/aaaMap/loader.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Menu_Quit.java" tooltip="Thrive/src/guiScript/Menu_Quit.java">
-<persistable path="/Thrive/src/guiScript/Menu_Quit.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Menu_Credits.java" tooltip="Thrive/src/guiScript/Menu_Credits.java">
-<persistable path="/Thrive/src/guiScript/Menu_Credits.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BackToMenu.java" tooltip="Thrive/src/guiScript/BackToMenu.java">
-<persistable path="/Thrive/src/guiScript/BackToMenu.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Items.java" tooltip="Thrive/src/aaa/Items.java">
+<persistable path="/Thrive/src/aaa/Items.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" tooltip="Thrive/src/aaa/Gui.java">
 <persistable path="/Thrive/src/aaa/Gui.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Screen.java" tooltip="Thrive/src/main/Screen.java">
-<persistable path="/Thrive/src/main/Screen.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Window.java" tooltip="Thrive/src/main/Window.java">
-<persistable path="/Thrive/src/main/Window.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KeyBoardInput.java" tooltip="Thrive/src/main/KeyBoardInput.java">
-<persistable path="/Thrive/src/main/KeyBoardInput.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Menu_Play.java" tooltip="Thrive/src/guiScript/Menu_Play.java">
-<persistable path="/Thrive/src/guiScript/Menu_Play.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Button.java" tooltip="Thrive/src/main/Button.java">
-<persistable path="/Thrive/src/main/Button.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Data.java" tooltip="Thrive/src/aaa/Data.java">
-<persistable path="/Thrive/src/aaa/Data.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="keys.java" tooltip="Map Creator/src/aData/keys.java">
-<persistable path="/Map Creator/src/aData/keys.java"/>
 </file>
 </mruList>
 </workbench>

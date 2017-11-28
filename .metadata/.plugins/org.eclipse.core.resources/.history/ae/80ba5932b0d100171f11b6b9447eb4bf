@@ -9,12 +9,4 @@
  B[i] = A[2i] + A[2i + 1], for i = 0, 1, ..., (n/2) - 1. If B has size 1, then he outputs
 
  B[0]. Otherwise, he replaces A with B, and repeats the process. What is the running time of his algorithm? 
- 
-*/
-
-/*
-
-if b has size 1 then O(1)
-else for b, O( (n/2)-1 ) = O(n)
-
 */
