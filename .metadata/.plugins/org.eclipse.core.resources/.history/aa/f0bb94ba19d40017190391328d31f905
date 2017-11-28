@@ -1,0 +1,55 @@
+package character;
+
+import aaa.Data;
+import aaaMap.MapNode;
+
+public class PlayerCommands {
+
+	public void command(String input){
+		
+		int type=-1;
+		String[] temp = input.split(":");
+		if(temp[0].equals("forward")){
+			input=temp[0];
+			type=Integer.parseInt(temp[1]);
+		}
+		
+		switch(input){
+		
+			case("forward"): teleportF(type); break;
+			case("reverse"): teleportR(); break;
+			case("chopTree"): chopTree(); break;
+			case("mineOre"): mineOre(); break;
+				
+			default: break;
+		}
+		
+	}
+	
+	private void teleportF(int type){
+		MapNode.forwardMap(type);
+	}
+	
+	private void teleportR(){
+		MapNode.reverseMap();
+	}
+	
+	private void chopTree(){
+		
+		for(int x=0; x<Data.player.inventory.length; x++){
+			for(int y=0; y<Data.player.inventory[0].length; y++){
+				
+				if(Data.player.inventory[x][y][0]==Data.player.actionIndex){ 
+					
+				}
+				
+			}
+		}
+		
+	}
+	
+	private void mineOre(){
+		System.out.println("mine");
+	}
+	
+}

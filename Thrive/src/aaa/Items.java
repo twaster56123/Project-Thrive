@@ -8,13 +8,20 @@ import javax.imageio.ImageIO;
 
 public class Items {
 
-	public static String[] name ={null,"axe","pickaxe","hoe"};
+	public static String[] name ={null,"axe","pickaxe","hoe", 
+		"cottonwood", "oakwood",
+		"copper", "tin", "bronze"};
 	
 	public static int 
 	nothing=0,
 	axe=1,
 	pickaxe=2,
-	hoe=3
+	hoe=3,
+	cottonwood=4,
+	oakwood=5,
+	copper=6,
+	tin=7,
+	bronze=8
 	;
 	
 	public static BufferedImage[] icon = new BufferedImage[100];

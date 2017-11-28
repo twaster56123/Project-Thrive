@@ -36,8 +36,6 @@ public class PlayerCommands {
 		MapNode.reverseMap();
 	}
 	
-//TODO make trees and ore animate and Regen over time etc
-	
 	private void chopTree(){
 		
 		if(Data.player.hotbar[Data.player.hotKeySelected-1]==Items.axe){

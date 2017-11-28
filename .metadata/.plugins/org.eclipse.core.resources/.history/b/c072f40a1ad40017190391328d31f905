@@ -1,0 +1,67 @@
+package character;
+
+import aaa.Data;
+import aaa.Items;
+import aaaMap.Map;
+import aaaMap.MapNode;
+
+public class PlayerCommands {
+
+	public void command(String input){
+		
+		int type=-1;
+		String[] temp = input.split(":");
+		if(temp[0].equals("forward")){
+			input=temp[0];
+			type=Integer.parseInt(temp[1]);
+		}
+		
+		switch(input){
+		
+			case("forward"): teleportF(type); break;
+			case("reverse"): teleportR(); break;
+			case("chopTree"): chopTree(); break;
+			case("mineOre"): mineOre(); break;
+				
+			default: break;
+		}
+		
+	}
+	
+	private void teleportF(int type){
+		MapNode.forwardMap(type);
+	}
+	
+	private void teleportR(){
+		MapNode.reverseMap();
+	}
+	
+	private void chopTree(){
+		
+		for(int x=0; x<Data.player.inventory.length; x++){
+			for(int y=0; y<Data.player.inventory[0].length; y++){
+
+				if(Data.player.inventory[x][y][0]==Items.nothing){ 
+					
+					if(Map._objects_name[Data.player.actionIndex].equals("Cottonwood_Tree")){
+						Data.player.inventory[x][y][0]=Items.cottonwood;
+					}
+					
+					if(Map._objects_name[Data.player.actionIndex].equals("Oak_Tree")){
+						Data.player.inventory[x][y][0]=Items.oakwood;
+					}
+					
+					return;
+					
+				}
+				
+			}
+		}
+		
+	}
+	
+	private void mineOre(){
+		System.out.println("mine");
+	}
+	
+}

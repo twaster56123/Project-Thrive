@@ -36,13 +36,11 @@ public class PlayerCommands {
 		MapNode.reverseMap();
 	}
 	
-//TODO make trees and ore animate and Regen over time etc
-	
 	private void chopTree(){
 		
-		if(Data.player.hotbar[Data.player.hotKeySelected-1]==Items.axe){
-			for(int y=0; y<Data.player.inventory[0].length; y++){
-				for(int x=0; x<Data.player.inventory.length; x++){
+		if(Data.player.hotbar[Data.player.hotKeySelected]==Items.axe){
+			for(int x=0; x<Data.player.inventory.length; x++){
+				for(int y=0; y<Data.player.inventory[0].length; y++){
 	
 					if(Data.player.inventory[x][y][0]==Items.nothing){ 
 						
@@ -65,29 +63,7 @@ public class PlayerCommands {
 	}
 	
 	private void mineOre(){
-		
-		if(Data.player.hotbar[Data.player.hotKeySelected-1]==Items.pickaxe){
-			for(int y=0; y<Data.player.inventory[0].length; y++){
-				for(int x=0; y<Data.player.inventory.length; x++){
-	
-					if(Data.player.inventory[x][y][0]==Items.nothing){ 
-						
-						if(Map._objects_name[Data.player.actionIndex].equals("Copper_Ore")){
-							Data.player.inventory[x][y][0]=Items.copper;
-						}
-						
-						if(Map._objects_name[Data.player.actionIndex].equals("Tin_Ore")){
-							Data.player.inventory[x][y][0]=Items.tin;
-						}
-						
-						return;
-						
-					}
-					
-				}
-			}
-		}
-		
+		System.out.println("mine");
 	}
 	
 }
