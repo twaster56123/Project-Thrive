@@ -9,18 +9,18 @@
 <fullyQualifiedTypeName name="aaa.KeyBoardData"/>
 <fullyQualifiedTypeName name="character.Camera_View"/>
 <fullyQualifiedTypeName name="aMap.Map"/>
-<fullyQualifiedTypeName name="aaa.Data"/>
 <fullyQualifiedTypeName name="aaa.Gui"/>
 <fullyQualifiedTypeName name="guiScript.BackToMenu"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array"/>
-<fullyQualifiedTypeName name="aaa.Items"/>
 <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
 <fullyQualifiedTypeName name="aaa.Hud"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.Scanner"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="aaaMap.MapNode"/>
-<fullyQualifiedTypeName name="aaaMap.Map"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+<fullyQualifiedTypeName name="aaaMap.MapNode"/>
+<fullyQualifiedTypeName name="aaa.Data"/>
+<fullyQualifiedTypeName name="aaaMap.Map"/>
+<fullyQualifiedTypeName name="aaa.Items"/>
 </qualifiedTypeNameHistroy>
